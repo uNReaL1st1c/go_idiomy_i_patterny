@@ -1,25 +1,9 @@
-package main
+package totalamountofpoints
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
 )
-
-func main() {
-
-	games := make([]string, 0, 10)
-	games = append(games, "2:2")
-	games = append(games, "3:1")
-	games = append(games, "3:2")
-	games = append(games, "2:2")
-	games = append(games, "1:1")
-	games = append(games, "0:3")
-	games = append(games, "1:2")
-
-	fmt.Println(Points(games))
-
-}
 
 func Points(games []string) int {
 
@@ -27,13 +11,13 @@ func Points(games []string) int {
 
 	for i := 0; i < len(games); i++ {
 		teamScores := strings.Split(games[i], ":")
-		points += CountOfPoints(teamScores)
+		points += countOfPoints(teamScores)
 	}
 
 	return points
 }
 
-func CountOfPoints(teamScores []string) int {
+func countOfPoints(teamScores []string) int {
 	const (
 		win  = 3
 		loss = 0
