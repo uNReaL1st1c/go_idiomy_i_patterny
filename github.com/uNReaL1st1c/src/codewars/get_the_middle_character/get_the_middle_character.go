@@ -2,9 +2,8 @@ package getthemiddlecharacter
 
 func GetMiddle(s string) string {
 
-	var result []rune
-
 	runes := []rune(s)
+	result := make([]rune, 0, len(runes))
 
 	if len(runes)%2 == 0 {
 		result = append(result, runes[(len(runes)/2)-1], runes[(len(runes)/2)])
