@@ -4,7 +4,7 @@ func DNAStrand(dna string) string {
 
 	runes := []rune(dna)
 
-	result := make([]rune, 0, 10)
+	result := make([]rune, 0, cap(runes))
 
 	for i := 0; i < len(runes); i++ {
 		result = append(result, otherComplementaryDNA(runes[i]))
